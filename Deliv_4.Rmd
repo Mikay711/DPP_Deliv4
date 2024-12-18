@@ -11,10 +11,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Loading Data
 
-```{r}
+```{r, warning=FALSE, message=FALSE}
 # Load libraries
 library(readr)
 library(dplyr)
+library(arrow)
 
 # Read Spotify data from GitHub
 spotify_data <- read_csv("https://raw.githubusercontent.com/Mikay711/DPP_Deliv3/refs/heads/main/Processed%20Data/Spotify_Rescaled.csv")
@@ -52,7 +53,8 @@ output221 <- spotify_data %>%
   group_by(stream_category, key) %>%
   summarize(
     mean_danceability = mean(danceability_scaled, na.rm = TRUE),
-    sum_energy = sum(energy_scaled, na.rm = TRUE)
+    sum_energy = sum(energy_scaled, na.rm = TRUE),
+    .groups = "drop"
   )
 
 # Preview the output
@@ -62,7 +64,7 @@ head(output221)
 ## One Group, Two Input Variables, Different Functions
 ```{r}
 # One Group, Two Input Variables, Different Functions
-output122 <- spotify_data %>%
+output12f1f2 <- spotify_data %>%
   group_by(stream_category) %>%
   summarize(
     median_danceability = median(danceability_scaled, na.rm = TRUE),
@@ -70,9 +72,42 @@ output122 <- spotify_data %>%
   )
 
 # Preview the result
-head(output122)
+head(output12f1f2)
 
 
 ```
+
+## Save Spotify Output111
+
+```{r}
+# Save output111
+write_csv(output111, "finalOutput/output111.csv")
+saveRDS(output111, "finalOutput/output111.RDS")
+write_parquet(output111, "finalOutput/output111.parquet")
+
+```
+
+## Save Spotify Ouput 221
+```{r}
+
+# Save output221
+write_csv(output221, "finalOutput/output221.csv")
+saveRDS(output221, "finalOutput/output221.RDS")
+write_parquet(output221, "finalOutput/output221.parquet")
+
+
+```
+
+## Save Spotify Output12f1f2
+```{r}
+# Save output12f1f2
+write_csv(output12f1f2, "finalOutput/output12f1f2.csv")
+saveRDS(output12f1f2, "finalOutput/output12f1f2.RDS")
+write_parquet(output12f1f2, "finalOutput/output12f1f2.parquet")
+
+```
+
+
+
 
 
