@@ -6,7 +6,7 @@ This repository contains code and aggregated outputs for Deliverable 4, demonstr
 ## Structure
 - `Deliv_4.Rmd`: RMarkdown file used to generate the HTML version of the aggregation process.
 - `Deliv_4.html`: [View the HTML version of the code](https://mikay711.github.io/DPP_Deliv4/Deliv_4.html).
-- `finalOutput/`: Folder containing all processed outputs in **CSV**, **RDS**, and **Parquet** formats.
+- `finalOutput`: Folder containing all processed outputs in **CSV**, **RDS**, and **Parquet** formats.
 
 ## Aggregation Summary
 1. **One Group, One Function, One Input Variable**:
@@ -28,7 +28,7 @@ This repository contains code and aggregated outputs for Deliverable 4, demonstr
 
 ## How to Use
 1. View the processing and aggregation steps in `Deliv_4.html`.
-2. Access the processed output files in the `finalOutput/` folder:
+2. Access the processed output files in the `finalOutput` folder:
    - `output111`, `output221`, `output122` saved as:
      - **CSV**
      - **RDS**
