@@ -29,7 +29,7 @@ This repository contains code and aggregated outputs for Deliverable 4, demonstr
 ## How to Use
 1. View the processing and aggregation steps in `Deliv_4.html`.
 2. Access the processed output files in the `finalOutput` folder:
-   - `output111`, `output221`, `output122` saved as:
+   - `output111`, `output221`, `output12f1f2` saved as:
      - **CSV**
      - **RDS**
      - **Parquet**
