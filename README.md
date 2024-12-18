@@ -1,8 +1,7 @@
 # Deliverable 4: Aggregation and Output Formatting
 
 This repository contains code and aggregated outputs for Deliverable 4, demonstrating data aggregation and saving outputs in multiple formats. The datasets used are:
-- **Spotify Most Streamed Songs**
-- **Billboard Hot 100 Songs (2023)**
+- **Spotify Most Streamed Songs 2023**
 
 ## Structure
 - `Deliv_4.Rmd`: RMarkdown file used to generate the HTML version of the aggregation process.
