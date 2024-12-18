@@ -371,13 +371,13 @@ spotify_data &lt;- read_csv(&quot;https://raw.githubusercontent.com/Mikay711/DPP
 head(spotify_data)</code></pre>
 <pre><code>## # A tibble: 6 × 25
 ##   track_name     `artist(s)_name` in_spotify_playlists in_spotify_charts streams
-##   &lt;chr&gt;          &lt;chr&gt;                           &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;  
-## 1 Seven (feat. … Latto, Jung Kook                  553               147 141381…
-## 2 LALA           Myke Towers                      1474                48 133716…
-## 3 vampire        Olivia Rodrigo                   1397               113 140003…
-## 4 Cruel Summer   Taylor Swift                     7858               100 800840…
-## 5 WHERE SHE GOES Bad Bunny                        3133                50 303236…
-## 6 Sprinter       Dave, Central C…                 2186                91 183706…
+##   &lt;chr&gt;          &lt;chr&gt;                           &lt;dbl&gt;             &lt;dbl&gt;   &lt;dbl&gt;
+## 1 Seven (feat. … Latto, Jung Kook                  553               147  1.41e8
+## 2 LALA           Myke Towers                      1474                48  1.34e8
+## 3 vampire        Olivia Rodrigo                   1397               113  1.40e8
+## 4 Cruel Summer   Taylor Swift                     7858               100  8.01e8
+## 5 WHERE SHE GOES Bad Bunny                        3133                50  3.03e8
+## 6 Sprinter       Dave, Central C…                 2186                91  1.84e8
 ## # ℹ 20 more variables: bpm &lt;dbl&gt;, key &lt;chr&gt;, mode &lt;chr&gt;,
 ## #   `danceability_%` &lt;dbl&gt;, `valence_%` &lt;dbl&gt;, `energy_%` &lt;dbl&gt;,
 ## #   `acousticness_%` &lt;dbl&gt;, `instrumentalness_%` &lt;dbl&gt;, `liveness_%` &lt;dbl&gt;,
@@ -395,11 +395,12 @@ output111 &lt;- spotify_data %&gt;%
 
 # Preview the result
 head(output111)</code></pre>
-<pre><code>## # A tibble: 2 × 2
+<pre><code>## # A tibble: 3 × 2
 ##   stream_category mean_energy
 ##   &lt;chr&gt;                 &lt;dbl&gt;
-## 1 high                  0.643
-## 2 low                   0.643</code></pre>
+## 1 high                  0.639
+## 2 low                   0.644
+## 3 medium                0.643</code></pre>
 </div>
 <div id="two-groups-two-functions-one-input-variable" class="section level2">
 <h2>Two Groups, Two Functions, One Input Variable</h2>
@@ -417,12 +418,12 @@ head(output221)</code></pre>
 <pre><code>## # A tibble: 6 × 4
 ##   stream_category key   mean_danceability sum_energy
 ##   &lt;chr&gt;           &lt;chr&gt;             &lt;dbl&gt;      &lt;dbl&gt;
-## 1 high            A                 0.604      11.1 
-## 2 high            A#                0.678      10.8 
-## 3 high            B                 0.748       8.85
-## 4 high            C#                0.696      20.3 
-## 5 high            D                 0.706       6.75
-## 6 high            D#                0.728       4.07</code></pre>
+## 1 high            A                 0.58        5.26
+## 2 high            A#                0.638       4.92
+## 3 high            B                 0.665       9.15
+## 4 high            C#                0.638      14.9 
+## 5 high            D                 0.669       9.34
+## 6 high            D#                0.542       5.04</code></pre>
 </div>
 <div id="one-group-two-input-variables-different-functions" class="section level2">
 <h2>One Group, Two Input Variables, Different Functions</h2>
@@ -436,11 +437,12 @@ output12f1f2 &lt;- spotify_data %&gt;%
 
 # Preview the result
 head(output12f1f2)</code></pre>
-<pre><code>## # A tibble: 2 × 3
+<pre><code>## # A tibble: 3 × 3
 ##   stream_category median_danceability sd_energy
 ##   &lt;chr&gt;                         &lt;dbl&gt;     &lt;dbl&gt;
-## 1 high                           0.7      0.151
-## 2 low                            0.69     0.169</code></pre>
+## 1 high                           0.64     0.167
+## 2 low                            0.7      0.171
+## 3 medium                         0.7      0.142</code></pre>
 </div>
 <div id="save-spotify-aggregation-outputs" class="section level2">
 <h2>Save Spotify Aggregation Outputs</h2>
