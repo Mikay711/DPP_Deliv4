@@ -1,0 +1,78 @@
+---
+title: "Deliverable 4"
+author: "Michaela Bowen"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Loading Data
+
+```{r}
+# Load libraries
+library(readr)
+library(dplyr)
+
+# Read Spotify data from GitHub
+spotify_data <- read_csv("https://raw.githubusercontent.com/Mikay711/DPP_Deliv3/refs/heads/main/Processed%20Data/Spotify_Rescaled.csv")
+
+# Preview Spotify data
+head(spotify_data)
+
+
+# Read Hot100 data from GitHub
+hot100_data <- read_csv("https://raw.githubusercontent.com/Mikay711/DPP_Deliv3/refs/heads/main/Processed%20Data/Hot100_Rescaled.csv")
+
+# Preview Hot100 data
+head(hot100_data)
+
+```
+
+## One Group, One Function, One Input Variable
+
+
+```{r}
+# One Group, One Function, One Input Variable: Mean of energy_scaled by stream_category
+output111 <- spotify_data %>%
+  group_by(stream_category) %>%
+  summarize(mean_energy = mean(energy_scaled, na.rm = TRUE))
+
+# Preview the result
+head(output111)
+
+```
+## Two Groups, Two Functions, One Input Variable
+
+```{r, warning=FALSE}
+# Two Groups, Two Functions, One Input Variable
+output221 <- spotify_data %>%
+  group_by(stream_category, key) %>%
+  summarize(
+    mean_danceability = mean(danceability_scaled, na.rm = TRUE),
+    sum_energy = sum(energy_scaled, na.rm = TRUE)
+  )
+
+# Preview the output
+head(output221)
+
+```
+## One Group, Two Input Variables, Different Functions
+```{r}
+# One Group, Two Input Variables, Different Functions
+output122 <- spotify_data %>%
+  group_by(stream_category) %>%
+  summarize(
+    median_danceability = median(danceability_scaled, na.rm = TRUE),
+    sd_energy = sd(energy_scaled, na.rm = TRUE)
+  )
+
+# Preview the result
+head(output122)
+
+
+```
+
+
