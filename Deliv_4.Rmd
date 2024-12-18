@@ -23,20 +23,13 @@ spotify_data <- read_csv("https://raw.githubusercontent.com/Mikay711/DPP_Deliv3/
 # Preview Spotify data
 head(spotify_data)
 
-
-# Read Hot100 data from GitHub
-hot100_data <- read_csv("https://raw.githubusercontent.com/Mikay711/DPP_Deliv3/refs/heads/main/Processed%20Data/Hot100_Rescaled.csv")
-
-# Preview Hot100 data
-head(hot100_data)
-
 ```
 
 ## One Group, One Function, One Input Variable
 
 
 ```{r}
-# One Group, One Function, One Input Variable: Mean of energy_scaled by stream_category
+# Aggregation 1: Mean of energy_scaled by stream_category
 output111 <- spotify_data %>%
   group_by(stream_category) %>%
   summarize(mean_energy = mean(energy_scaled, na.rm = TRUE))
@@ -44,11 +37,12 @@ output111 <- spotify_data %>%
 # Preview the result
 head(output111)
 
+
 ```
 ## Two Groups, Two Functions, One Input Variable
 
 ```{r, warning=FALSE}
-# Two Groups, Two Functions, One Input Variable
+# Aggregation 2: Mean of danceability_scaled and sum of energy_scaled by stream_category and key
 output221 <- spotify_data %>%
   group_by(stream_category, key) %>%
   summarize(
@@ -57,13 +51,14 @@ output221 <- spotify_data %>%
     .groups = "drop"
   )
 
-# Preview the output
+# Preview the result
 head(output221)
+
 
 ```
 ## One Group, Two Input Variables, Different Functions
 ```{r}
-# One Group, Two Input Variables, Different Functions
+# Aggregation 3: Median of danceability_scaled and SD of energy_scaled by stream_category
 output12f1f2 <- spotify_data %>%
   group_by(stream_category) %>%
   summarize(
@@ -75,9 +70,10 @@ output12f1f2 <- spotify_data %>%
 head(output12f1f2)
 
 
+
 ```
 
-## Save Spotify Output111
+## Save Spotify Aggregation Outputs
 
 ```{r}
 # Save output111
@@ -85,10 +81,7 @@ write_csv(output111, "finalOutput/output111.csv")
 saveRDS(output111, "finalOutput/output111.RDS")
 write_parquet(output111, "finalOutput/output111.parquet")
 
-```
 
-## Save Spotify Ouput 221
-```{r}
 
 # Save output221
 write_csv(output221, "finalOutput/output221.csv")
@@ -96,10 +89,7 @@ saveRDS(output221, "finalOutput/output221.RDS")
 write_parquet(output221, "finalOutput/output221.parquet")
 
 
-```
 
-## Save Spotify Output12f1f2
-```{r}
 # Save output12f1f2
 write_csv(output12f1f2, "finalOutput/output12f1f2.csv")
 saveRDS(output12f1f2, "finalOutput/output12f1f2.RDS")
