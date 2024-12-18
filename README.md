@@ -1,6 +1,6 @@
 # Deliverable 4: Aggregation and Output Formatting
 
-This repository contains code and aggregated outputs for Deliverable 4, demonstrating data aggregation and saving outputs in multiple formats. The datasets used are:
+This repository contains code and aggregated outputs for Deliverable 4, demonstrating data aggregation and saving outputs in multiple formats. The dataset used is:
 - **Spotify Most Streamed Songs 2023**
 
 ## Structure
@@ -24,7 +24,7 @@ This repository contains code and aggregated outputs for Deliverable 4, demonstr
    - **Functions**:
      - Median of `danceability_scaled`
      - Standard deviation of `energy_scaled`
-   - **Output**: `output122` (e.g., danceability median and energy variability by stream category).
+   - **Output**: `output12f1f2` (e.g., danceability median and energy variability by stream category).
 
 ## How to Use
 1. View the processing and aggregation steps in `Deliv_4.html`.
@@ -33,4 +33,3 @@ This repository contains code and aggregated outputs for Deliverable 4, demonstr
      - **CSV**
      - **RDS**
      - **Parquet**
-
